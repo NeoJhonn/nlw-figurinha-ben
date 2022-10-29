@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*para resetar o cálculo do tamanho das caixas*/
+}
+
+body * {
+    font-family: "Roboto";
+}
+
+body{
+    text-align: center;/*alinha todos os elementos no centro*/
+    background: linear-gradient(
+        150deg,
+        #0F2B05,
+        #000000);
+    height: 100vh;/*definir uma altura view port height*/
+}
+
+header{
+    /*padding prenche a caixa da tag*/
+    padding: 75px 0;/*lagura em cima e em baixo 75px e nas laterais 0*/
+   
+}
+
+.card{
+    display: inline-block;
+    width: 354px;
+    height: 508px;
+    background-image: url("./assets/card-explorer.svg");
+    cursor: pointer;
+    /*evita interferências no seu cursor*/
+    user-select: none;
+    -webkit-user-select: none;
+    /*cria uma animação, figurinha vai carregar caindo*/
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: appear 0.4s forwards;
+}
+
+.card > img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;/*ajusta o tamanho da imagem*/
+    border-radius: 50%;/*borda totalmente redonda, circular*/
+    border: 4px solid #F7DD43;
+    margin-top: 97px;
+   /*as propriedade abaixo evitar que se selecione o elemento da pagina*/
+   pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.info{
+   text-align: left;
+   margin-left: 70px;
+   margin-top: 70px;
+   color: #FFFFFF;
+}
+
+.info h1{
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.info p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+/*animação*/
+@keyframes appear{
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
